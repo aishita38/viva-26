@@ -147,29 +147,26 @@
 
 .registration-form-container {
   position: absolute;
-  top: 46%;
-  /* Centered vertically within the inner gate area */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 38%;
-  /* Responsive width relative to the gate */
   max-width: 420px;
   max-height: 65%;
-  /* Constrains form height to stay within the gate */
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10;
   animation: fadeIn 0.8s ease-in-out;
   overflow-y: visible;
-  /* Keeps the clean look without internal scrolling */
 }
 
 .form-heading-img {
   width: 100%;
   /* Scales relative to the container */
   max-width: 320px;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 20px auto;
+  /* Reduced from 35px */
   display: block;
   height: auto;
 }
@@ -187,9 +184,11 @@
 
 .form-group label {
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  /* Increased for big screen */
+  font-weight: 500;
+  /* Reduced from 600 */
   margin-bottom: 4px;
   text-align: left;
   letter-spacing: 0.5px;
@@ -197,13 +196,16 @@
 }
 
 .form-group input {
-  background: rgba(13, 19, 33, 0.85);
-  /* Slightly more opaque for readability */
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0d192d;
+  /* Solid dark blue background */
+  border: 1px solid #1a3c6d;
+  /* Blue border to match the image */
   border-radius: 6px;
-  padding: 8px 12px;
+  padding: 10px 15px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
+  /* Increased for big screen */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 100%;
   outline: none;
   transition: all 0.3s ease;
@@ -254,9 +256,11 @@
 
 .participant-title {
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  /* Increased for big screen */
+  font-weight: 600;
+  /* Reduced from 700 */
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
@@ -272,7 +276,7 @@
   align-items: center;
   gap: 15px;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   cursor: pointer;
   position: relative;
@@ -324,23 +328,35 @@
 @media (max-width: 1024px) {
   .registration-form-container {
     width: 36%;
-    top: 47%;
+    top: 49%;
+    /* Moved down from 47% */
   }
 }
 
 @media (max-width: 768px) {
   .registration-form-container {
     width: 52%;
-    top: 45%;
+    top: 48%;
+    /* Moved down from 45% */
   }
 
   .form-group label {
-    font-size: 11px;
+    font-size: 16px;
+    /* Increased for medium screen */
   }
 
   .form-group input {
-    padding: 7px 10px;
-    font-size: 13px;
+    padding: 10px 15px;
+    font-size: 17px;
+    /* Increased for medium screen */
+  }
+
+  .participant-title {
+    font-size: 22px;
+  }
+
+  .radio-label {
+    font-size: 18px;
   }
 }
 
@@ -361,13 +377,14 @@
   .registration-form-container {
     width: 65%;
     /* Reduced from 75% to increase horizontal padding */
-    top: 45%;
+    top: 50%;
   }
 
   .form-heading-img {
     max-width: 280px;
     /* Slightly reduced to match new container width */
     margin-bottom: 25px;
+    /* Reduced from 45px */
   }
 
   .form-group {
@@ -375,7 +392,8 @@
   }
 
   .form-group label {
-    font-size: 12px;
+    font-size: 13px;
+    /* Increased from 12px */
     margin-bottom: 4px;
   }
 
@@ -395,7 +413,8 @@
 
   /* Responsive Participant Selection */
   .participant-title {
-    font-size: 18px;
+    font-size: 20px;
+    /* Increased from 18px */
     margin-bottom: 20px;
   }
 
