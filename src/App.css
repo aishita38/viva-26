@@ -1,0 +1,416 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 85px;
+  /* Adjust this value to increase/decrease top spacing */
+}
+
+.door-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.door-gif {
+  width: 1100px;
+  height: 1100px;
+  object-fit: contain;
+  display: block;
+  animation: playOnce 0.4s steps(1) forwards;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes playOnce {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for GIF */
+@media (max-width: 900px) {
+  .door-gif {
+    width: 825px;
+    height: 825px;
+  }
+}
+
+@media (max-width: 100vw) {
+  .door-gif {
+    width: 1400px;
+    height: 1400px;
+  }
+}
+
+/* Base door styles will be defined below and overridden at the bottom */
+
+
+/* PNG Door - Overlay that fades in */
+.door-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-door {
+  display: none;
+}
+
+.door-png-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1050px;
+  /* Matches desktop door-png width */
+  height: 1050px;
+  /* Matches desktop door-png height */
+  animation: fadeIn 0.7s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.registration-form-container {
+  position: absolute;
+  top: 46%;
+  /* Centered vertically within the inner gate area */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38%;
+  /* Responsive width relative to the gate */
+  max-width: 420px;
+  max-height: 65%;
+  /* Constrains form height to stay within the gate */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  animation: fadeIn 0.8s ease-in-out;
+  overflow-y: visible;
+  /* Keeps the clean look without internal scrolling */
+}
+
+.form-heading-img {
+  width: 100%;
+  /* Scales relative to the container */
+  max-width: 320px;
+  margin: 0 auto 15px auto;
+  display: block;
+  height: auto;
+}
+
+.registration-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  /* Tighter spacing to fit all fields vertically */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.form-group input {
+  background: rgba(13, 19, 33, 0.85);
+  /* Slightly more opaque for readability */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(13, 19, 33, 0.95);
+}
+
+.next-button {
+  position: absolute;
+  bottom: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.next-button img {
+  width: 160px;
+  height: auto;
+}
+
+.next-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.next-button:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Participant Selection Step Styles */
+.participant-selection {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+}
+
+.participant-title {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+/* Hide default radio */
+.radio-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom radio button (circle) */
+.custom-radio {
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Circle when checked */
+.radio-label input:checked~.custom-radio {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.radio-label input:checked~.custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.radio-label:hover .custom-radio {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive adjustments for the form specifically */
+@media (max-width: 1024px) {
+  .registration-form-container {
+    width: 36%;
+    top: 47%;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-form-container {
+    width: 52%;
+    top: 45%;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .door-png-overlay {
+    width: 520px;
+    height: 520px;
+  }
+
+  .desktop-door {
+    display: none;
+  }
+
+  .mobile-door {
+    display: block;
+  }
+
+  .registration-form-container {
+    width: 65%;
+    /* Reduced from 75% to increase horizontal padding */
+    top: 45%;
+  }
+
+  .form-heading-img {
+    max-width: 280px;
+    /* Slightly reduced to match new container width */
+    margin-bottom: 25px;
+  }
+
+  .form-group {
+    margin-bottom: 8px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .form-group input {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .next-button {
+    bottom: 0%;
+    /* Further lowered to sit right on the bottom rim */
+  }
+
+  .next-button img {
+    width: 140px;
+  }
+
+  /* Responsive Participant Selection */
+  .participant-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .radio-label {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .custom-radio {
+    height: 22px;
+    width: 22px;
+  }
+
+  .radio-label input:checked~.custom-radio::after {
+    width: 12px;
+    height: 12px;
+  }
+}
